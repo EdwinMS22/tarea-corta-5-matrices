@@ -24,4 +24,37 @@ public:
 			delete[] matrix[i];
 		delete[] matrix;
 	}
+	E getValue(int row, int col) {
+
+	}
+	void setValue(int row, int col, E value) {
+
+	}
+	int getRows() {
+
+	}
+	int getColumns() {
+
+	}
+	void setAll(E value) {
+
+	}
+	void transpose() {
+
+	}
+	void addRow(E value) {
+
+	}
+	void addColumn(E value) {
+
+	}
+	void removeRow(int row) {
+
+	}
+	void removeColumn(int col) {
+
+	}
+	void print() {
+
+	}
 };
