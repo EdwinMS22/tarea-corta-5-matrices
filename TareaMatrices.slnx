@@ -1,0 +1,7 @@
+<Solution>
+  <Configurations>
+    <Platform Name="x64" />
+    <Platform Name="x86" />
+  </Configurations>
+  <Project Path="TareaMatrices.vcxproj" Id="b10a3ef3-a4b5-4e88-b06d-3dea5513dcdc" />
+</Solution>
