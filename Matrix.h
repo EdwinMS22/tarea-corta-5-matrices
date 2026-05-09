@@ -9,6 +9,14 @@ private:
 	E** matrix;
 	int rows;
 	int cols;
+
+	void checkRowColumn(int row, int col) {
+		if (row < 0 || row >= rows)
+			throw std::runtime_error("Invalid row.");
+		if (col < 0 || col >= cols)
+			throw std::runtime_error("Invalid column.");
+	}
+
 public:
 	Matrix(int rows, int cols) {
 		if (rows <= 0 || cols <= 0)
