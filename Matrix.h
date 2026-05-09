@@ -37,7 +37,8 @@ public:
 		return matrix[row][col];
 	}
 	void setValue(int row, int col, E value) {
-
+		checkRowColumn(row, col);
+		matrix[row][col] = value;
 	}
 	int getRows() {
 
