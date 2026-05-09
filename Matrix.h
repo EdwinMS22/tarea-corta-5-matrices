@@ -25,7 +25,7 @@ public:
 		this->cols = cols;
 		matrix = new E*[rows];
 		for (int i = 0; i < rows; i++)
-			matrix[i] = new E[cols];
+			matrix[i] = new E[cols]();
 	}
 	~Matrix() {
 		for (int i = 0; i < rows; i++)
