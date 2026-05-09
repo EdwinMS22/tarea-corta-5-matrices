@@ -33,7 +33,8 @@ public:
 		delete[] matrix;
 	}
 	E getValue(int row, int col) {
-
+		checkRowColumn(row, col);
+		return matrix[row][col];
 	}
 	void setValue(int row, int col, E value) {
 
