@@ -41,10 +41,10 @@ public:
 		matrix[row][col] = value;
 	}
 	int getRows() {
-
+		return rows;
 	}
 	int getColumns() {
-
+		return cols;
 	}
 	void setAll(E value) {
 
