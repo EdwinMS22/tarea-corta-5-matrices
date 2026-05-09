@@ -47,7 +47,9 @@ public:
 		return cols;
 	}
 	void setAll(E value) {
-
+		for (int r = 0; r < rows; r++)
+			for (int c = 0; c < cols; c++)
+				matrix[r][c] = value;
 	}
 	void transpose() {
 
