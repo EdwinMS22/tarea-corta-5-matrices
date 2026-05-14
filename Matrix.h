@@ -80,12 +80,12 @@ public:
 		for (int c = 0; c < cols; c++)
 			temp[rows][c] = value;
 
-		delete matrix;
+		delete[] matrix;
 		matrix = temp;
 		rows++;
 	}
 	void addColumn(E value) {
-
+		
 	}
 	void removeRow(int row) {
 
