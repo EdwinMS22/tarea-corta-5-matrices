@@ -72,7 +72,17 @@ public:
 				matrix[r][c] = temp.getValue(r, c);
 	}
 	void addRow(E value) {
+		E** temp = new E*[rows + 1];
+		for (int i = 0; i < rows; i++)
+			temp[i] = matrix[i];
 
+		temp[rows] = new E[cols];
+		for (int c = 0; c < cols; c++)
+			temp[rows][c] = value;
+
+		delete matrix;
+		matrix = temp;
+		rows++;
 	}
 	void addColumn(E value) {
 
