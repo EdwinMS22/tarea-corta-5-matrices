@@ -90,9 +90,8 @@ public:
 	void addColumn(E value) {
 		for (int r = 0; r < rows; r++) {
 			E* temp = new E[cols + 1];
-			for (int c = 0; c < cols; c++) {
+			for (int c = 0; c < cols; c++)
 				temp[c] = matrix[r][c];
-			}
 			temp[cols] = value;
 			delete[] matrix[r];
 			matrix[r] = temp;
