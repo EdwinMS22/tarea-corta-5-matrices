@@ -118,12 +118,16 @@ public:
 	void removeColumn(int col) {
 		if (col < 0 || col >= cols)
 			throw std::runtime_error("Invalid column.");
+		if (cols <= 1)
+			throw std::runtime_error("Cannot remove the only column in the matrix.");
+
 		for (int r = 0; r < rows; r++) {
 			E* temp = new E[cols - 1];
 			for (int c = 0; c < col; c++)
 				temp[c] = matrix[r][c];
 			for (int c = col; c < cols - 1; c++)
 				temp[c] = matrix[r][c + 1];
+
 			delete[] matrix[r];
 			matrix[r] = temp;
 		}
