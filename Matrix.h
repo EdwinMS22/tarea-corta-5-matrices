@@ -97,7 +97,18 @@ public:
 		cols++;
 	}
 	void removeRow(int row) {
+		if (row < 0 || row >= rows)
+			throw std::runtime_error("Invalid row.");
+		E** temp = new E*[rows - 1];
+		for (int i = 0; i < row; i++)
+			temp[i] = matrix[i];
+		for (int i = row; i < rows - 1; i++)
+			temp[i] = matrix[i + 1];
 
+		delete[] matrix[row];
+		delete[] matrix;
+		matrix = temp;
+		rows--;
 	}
 	void removeColumn(int col) {
 
