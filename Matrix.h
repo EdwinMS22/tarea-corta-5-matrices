@@ -2,6 +2,7 @@
 
 #include <iostream>
 #include <stdexcept>
+#include <iomanip>
 
 template <typename E>
 class Matrix {
@@ -134,6 +135,10 @@ public:
 		cols--;
 	}
 	void print() const {
-
+		for (int r = 0; r < rows; r++) {
+			for (int c = 0; c < cols; c++)
+				std::cout << std::setw(4) << matrix[r][c] << ' ';
+			std::cout << '\n';
+		}
 	}
 };
