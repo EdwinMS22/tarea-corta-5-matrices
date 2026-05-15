@@ -54,24 +54,24 @@ public:
 				matrix[r][c] = value;
 	}
 	void transpose() {
-		Matrix<E> temp(cols, rows);
+		int newRows = cols;
+		int newCols = rows;
+
+		E** temp = new E*[newRows];
+		for (int i = 0; i < newRows; i++)
+			temp[i] = new E[newCols];
+
 		for (int r = 0; r < rows; r++)
 			for (int c = 0; c < cols; c++)
-				temp.setValue(c, r, matrix[r][c]);
+				temp[c][r] = matrix[r][c];
 
 		for (int i = 0; i < rows; i++)
 			delete[] matrix[i];
 		delete[] matrix;
 
-		rows = temp.getRows();
-		cols = temp.getColumns();
-		matrix = new E*[rows];
-		for (int i = 0; i < rows; i++)
-			matrix[i] = new E[cols];
-
-		for (int r = 0; r < rows; r++)
-			for (int c = 0; c < cols; c++)
-				matrix[r][c] = temp.getValue(r, c);
+		rows = newRows;
+		cols = newCols;
+		matrix = temp;
 	}
 	void addRow(E value) {
 		E** temp = new E*[rows + 1];
