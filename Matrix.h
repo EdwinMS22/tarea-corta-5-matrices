@@ -10,7 +10,7 @@ private:
 	int rows;
 	int cols;
 
-	void checkRowColumn(int row, int col) {
+	void checkRowColumn(int row, int col) const {
 		if (row < 0 || row >= rows)
 			throw std::runtime_error("Invalid row.");
 		if (col < 0 || col >= cols)
@@ -32,7 +32,7 @@ public:
 			delete[] matrix[i];
 		delete[] matrix;
 	}
-	E getValue(int row, int col) {
+	E getValue(int row, int col) const {
 		checkRowColumn(row, col);
 		return matrix[row][col];
 	}
@@ -40,10 +40,10 @@ public:
 		checkRowColumn(row, col);
 		matrix[row][col] = value;
 	}
-	int getRows() {
+	int getRows() const {
 		return rows;
 	}
-	int getColumns() {
+	int getColumns() const {
 		return cols;
 	}
 	void setAll(E value) {
@@ -124,7 +124,7 @@ public:
 		}
 		cols--;
 	}
-	void print() {
+	void print() const {
 
 	}
 };
