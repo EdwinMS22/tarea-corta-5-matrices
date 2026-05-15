@@ -18,6 +18,8 @@ private:
 	}
 
 public:
+	Matrix(const Matrix& other) = delete;
+	Matrix& operator=(const Matrix& other) = delete;
 	Matrix(int rows, int cols) {
 		if (rows <= 0 || cols <= 0)
 			throw std::runtime_error("Number of rows and columns must be greater than zero.");
