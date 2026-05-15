@@ -101,6 +101,9 @@ public:
 	void removeRow(int row) {
 		if (row < 0 || row >= rows)
 			throw std::runtime_error("Invalid row.");
+		if (rows <= 1)
+			throw std::runtime_error("Cannot remove the only row in the matrix.");
+
 		E** temp = new E*[rows - 1];
 		for (int i = 0; i < row; i++)
 			temp[i] = matrix[i];
